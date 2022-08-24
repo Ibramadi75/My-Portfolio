@@ -2,13 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;700;900&display=swap');
 
 body{
+    background: #e2e2e2;
+    padding-top: 15vh;
+    transition-duration:1s;
+    overflow: hidden;
+}
+#app{
     margin: 0;
     transition-duration: .3s;
-    background: #e2e2e2;
     height: 100vh;
-    overflow: hidden;
     display: flex;
     flex-wrap: wrap;
+}
+a{
+    color: black;
+    text-decoration: none;
 }
 p{
     font-family: 'Figtree', sans-serif;
@@ -30,7 +38,9 @@ ul{
 }
 header{
     margin:auto;
-
+    position: fixed;
+    top: 7vh;
+    left:10vw;
     width:70%;
 }
 #navItemsContainer{
@@ -80,9 +90,11 @@ a:hover::before{
 #img0{
     right: 0%;
     top: 35vh;
-    animation: flotte 5s infinite, appear 5s forwards;
+    animation: flotte 5s infinite, appear 5s forwards, fromRight 1s forwards;
     transition-duration: 3s;
-    /* animation: appear 5s forwards; */
+}
+.fromLeft{
+    animation: fromLeft 1s forwards, appear 2s forwards;
 }
 
 @keyframes appear {
@@ -91,6 +103,20 @@ a:hover::before{
     }
     100%{
         opacity: 1;
+    }
+}
+@keyframes fromLeft {
+    0%{
+        left: 5vw;
+    }100%{
+        left: 12vw;
+    }
+}
+@keyframes fromRight {
+    0%{
+        right: 5vw;
+    }100%{
+        right: 15vw;
     }
 }
 
@@ -111,10 +137,10 @@ a:hover::before{
 
 #lside{
     width:40vw;
-    height:50vh;
-    min-height:100px;
+    min-height:50vh;
     position: relative;
     top: 5vh;
+    left: 10vw;
     padding:20px;
 
     font-size: 20px;
@@ -125,7 +151,6 @@ a:hover::before{
     transition-duration: .4s;
 
     margin-bottom:100px;
-    animation: appear 5s forwards;
 }
 
 .circle{
@@ -193,7 +218,7 @@ a:hover::before{
     width:70%;
 }
 
-#lside > a > li{
+.travaux{
     list-style:none;
     margin: 30px;
     margin-left: 0;
@@ -202,8 +227,20 @@ a:hover::before{
     padding-right: 40px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     border-radius:3px;
-
+    position: relative;
     transition-duration: .2s;
+    animation: 1s fromLeft2 forwards;
+    right: 200px;
+    opacity:0;
+}
+@keyframes fromLeft2{
+    0%{
+        opacity:0;
+    }
+    100%{
+        right: 0px;
+        opacity:1;
+    }
 }
 #lside > a > li:hover{
     transition-duration: .2s;
@@ -213,16 +250,18 @@ a:hover::before{
     text-decoration:none;
     color: black;
 }
-
-
+.headerItems{
+    cursor:pointer;
+}
 .list-heading{
     font-family: 'Silkscreen', cursive;
+    margin-bottom: 20px;
 }
 .barLevel{
     width:100px;
     height:25px;
     float:right;
-    margin-left:100px;
+    margin-left:30px;
 
     border: 1.2px solid black;
     box-sizing: border-box;
@@ -261,6 +300,11 @@ a:hover::before{
     width: 60px;
     animation:bar-remplir60 1s forwards;
 }
+#php-barlevel::before{
+    background-color:#dfe880;
+    width: 53px;
+    animation:bar-remplir53 1s forwards;
+}
 @keyframes bar-remplir84 {
     0%{
         width:0px;
@@ -293,8 +337,6 @@ a:hover::before{
         width:60px;
     }
 }
-
-
 .barLevelQuarter{
     width: 25%;
     height: 24px;
@@ -316,7 +358,7 @@ a:hover::before{
 }
 #write-bar{
     animation: write-bar 1s infinite;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 @keyframes write-bar {
     0%{
@@ -333,7 +375,7 @@ a:hover::before{
     }
 }
 footer{
-    position:absolute;
+    position:fixed;
     bottom:20px;
     width:100%;
     text-align:center;
@@ -349,4 +391,25 @@ footer{
     overflow: scroll;
     padding:20px;
     text-align:center;
+}
+.competences-lside{
+    display:flex;
+    flex-wrap: wrap;
+    background-color:#ffffff90;
+    border-radius: 10px;
+    padding:20px;
+    position: relative;
+    height:auto !important; 
+}
+.list-competences-container{
+    width:45%;
+    margin:2.5%;
+}
+.escalier{
+    display:none;
+}
+#mesVeillesList{
+    display: flex;
+    justify-content:space-around;
+    width:100%;
 }

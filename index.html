@@ -1,98 +1,226 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
     <!-- import fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/vue@next"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="func.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      
+      <img
+        src="./images/home.png"
+        alt="icon du menu sélectionné"
+        id="img0"
+        class="backImages"
+      />
+      <div class="back">
+        <img
+          src=""
+          alt="icon du menu sélectionné"
+          id="img0"
+          class="backImages"
+        />
+      </div>
 
-</head>
-<body>
-
-    <img src="" alt="icon du menu sélectionné" id="img0" class="backImages">
-
-    <div class="back">
-        <img src="" alt="icon du menu sélectionné" id="img0" class="backImages">
-    </div>
-
-    
-    <script type="text/javascript" src="../lib/jquery-3.6.0.min.js" defer></script>
-    <script type="text/javascript" src="script.js" defer></script>
-
-    </script>
-
-    <header>
+      <header>
         <ul id="navItemsContainer">
-            <li style="width:40%;">
-                <a href="" class="navItems" id="accueil">
-                    Accueil
-                </a>
-            </li>
-            <li>
-                <a href="" class="navItems" id="travaux">
-                    Travaux
-                </a>
-            </li>
-            <li>
-                <a href="" class="navItems" id="skills">
-                    Compétences
-                </a>
-            </li>
-            <li>
-                <a href="" class="navItems" id="veille">
-                    Veille
-                </a>
-            </li>
-            <li id="contact-li">
-                <a href="" class="navItems" id="contact">
-                    Contact
-                </a>
-            </li>
+          <li
+            class="headerItems"
+            v-for="item in headerItems"
+            @mouseover="MenuItemSelected(item.label)"
+          >
+            {{item.label}}
+          </li>
         </ul>
-    </header>
-    <div id="main">
-
-        <section id="lside">
-            <div class="screen">
-                <h3>Mes veilles technologiques</h3>
+      </header>
+      <div id="main">
+        <section
+          id="lside"
+          class="fromLeft"
+          v-if="this.headerItems[0].isSelected == true || this.headerItemsAllFalse"
+        >
+          <h3>Bienvenue sur mon portfolio</h3>
+          <p>
+            Je suis Ibrahim, étudiant en informatique et futur développeur web.
+          </p>
+          <div id="frise">
+            <div id="chronologie">
+              <div class="barProgress"></div>
+              <div class="circle"></div>
+              <div class="bar"></div>
+              <div class="circle"></div>
             </div>
-            <!-- À mettre à la fin  -->
-            <!-- <h3>Bienvenue sur mon portfolio</h3>
-            <p>Je suis Ibrahim, étudiant en informatique et futur développeur web.</p>
-            <div id='frise'>
-                <div id='chronologie'>
-                    <div class='barProgress'>
-
-                    </div>
-                    <div class='circle'>
-
-                    </div>
-                    <div class='bar'>
-
-                    </div>
-                    <div class='circle'>
-
-                    </div>
-                </div>  
-                <div id='event'>
-                    <p style='font-size:16px; margin-top:90px; margin-bottom:80px;'> 
-                        <span style='font-size:18px; font-weight:bold;'>BTS Services Informatiques aux Organisations</span> 2021-2023, LGT Louis Armand, Spécialité Solution Logiciel, Application
-                    </p>
-                    <p style='font-size:16px; margin-bottom:10px;'>
-                        <span style='font-size:18px; font-weight:bold;'>Baccalauréat général</span> 2020-2021, Lycée Emmanuel Mounier, Spécialité Mathématique, Sciences Économiques et sociale, Science et Vie de la Terre
-                    </p>
-                </div>
-            </div> -->
+            <div id="event">
+              <p style="font-size: 16px; margin-top: 90px; margin-bottom: 80px">
+                <span style="font-size: 18px; font-weight: bold"
+                  >BTS Services Informatiques aux Organisations</span
+                >
+                2021-2023, LGT Louis Armand, Spécialité Solution Logiciel,
+                Application
+              </p>
+              <p style="font-size: 16px; margin-bottom: 10px">
+                <span style="font-size: 18px; font-weight: bold"
+                  >Baccalauréat général</span
+                >
+                2020-2021, Lycée Emmanuel Mounier, Spécialité Mathématique,
+                Sciences Économiques et sociale, Science et Vie de la Terre
+              </p>
+            </div>
+          </div>
         </section>
-    </div>
-    <footer>
-        Réalisé par Ibrahim Madi ©
-    </footer>
-</body>
+        <section
+          id="lside"
+          v-else-if="this.headerItems[1].isSelected == true || this.headerItemsAllFalse"
+        >
+          <ul>
+            <li v-for="item of this.mesTravaux" class="travaux" v-bind:id="'travaux' + item.id">
+              <a v-bind:href="'./mesTravaux/' + item.urlTravaux">
+                {{item.title}}
+                <img
+                  src="images/next.png"
+                  style="
+                    max-width: 15px;
+                    position: absolute;
+                    right: 20px;
+                    margin-left: 20px;
+                  "
+              /></a>
+            </li>
+          </ul>
+        </section>
+        <section
+          id="lside"
+          class="competences-lside fromLeft"
+          v-else-if="this.headerItems[2].isSelected == true"
+        >
+          <div class="list-competences-container">
+              <h3 class="list-heading">Les languages web</h3>
+              <ul class="compUl">
+                  <li>
+                  Html&Css
+                  <div id="htmlcss-barlevel" class="barLevel">
+                      <div class="barLevelQuarter"></div>
+                      <div class="barLevelQuarter"></div>
+                      <div class="barLevelQuarter"></div>
+                      <div class="last-barLevelQuarter barLevelQuarter"></div>
+                  </div>
+                  </li>
+                  <li>
+                  JavaScript
+                  <div id="javascript-barlevel" class="barLevel">
+                      <div class="barLevelQuarter"></div>
+                      <div class="barLevelQuarter"></div>
+                      <div class="barLevelQuarter"></div>
+                      <div class="last-barLevelQuarter barLevelQuarter"></div>
+                  </div>
+                  </li>
+                  <li>
+                    PHP
+                    <div id="php-barlevel" class="barLevel">
+                        <div class="barLevelQuarter"></div>
+                        <div class="barLevelQuarter"></div>
+                        <div class="barLevelQuarter"></div>
+                        <div class="last-barLevelQuarter barLevelQuarter"></div>
+                    </div>
+                    </li>
+              </ul>
+          </div>
+          <div class="list-competences-container">
+              <h3 class="list-heading">Les frameworks</h3>
+              <ul class="compUl">
+                  <li>
+                  VueJs
+                  <div id="vueJs-barlevel" class="barLevel">
+                      <div class="barLevelQuarter"></div>
+                      <div class="barLevelQuarter"></div>
+                      <div class="barLevelQuarter"></div>
+                      <div class="last-barLevelQuarter barLevelQuarter"></div>
+                  </div>
+                  </li>
+                  <li>
+                  JQuery
+                  <div id="jQuery-barlevel" class="barLevel">
+                      <div class="barLevelQuarter"></div>
+                      <div class="barLevelQuarter"></div>
+                      <div class="barLevelQuarter"></div>
+                      <div class="last-barLevelQuarter barLevelQuarter"></div>
+                  </div>
+                  </li>
+              </ul>
+          </div>
+            <div class="list-competences-container">
+                <h4 class="list-heading">Autres compétences :</h4>
+                <ul>
+                    <li>GIT</li>
+                    <li>Python</li>
+                    <li>Wordpress (Divi)</li>
+                    <li>C#</li>
+                    <li id="write-bar">|</li>
+                </ul>
+            </div>
+        </section>
+
+        <section
+          id="lside"
+          v-else-if="this.headerItems[3].isSelected"
+        >
+          <ul>
+            <li v-for="item of this.mesVeilles" class="travaux" v-bind:id="'veille' + item.id">
+              <a v-bind:href="'./mesVeilles/' + item.urlPage">
+                {{item.title}}
+                <img
+                  src="images/next.png"
+                  style="
+                    max-width: 15px;
+                    position: absolute;
+                    right: 20px;
+                    margin-left: 20px;
+                  "
+              /></a>
+              <span style="font-size:13px;">{{item.lastUpdated.toLocaleDateString("fr")}}</span>
+            </li>
+          </ul>
+        </section>
+
+        <section
+          id="lside"
+          v-else-if="this.headerItems[4].isSelected == true"
+        >
+          <div id="contactContainer">
+            <div id="listingSocialMedia">
+              <ul>
+                <li v-for="socialMedia in socialMedias">
+                  <a v-bind:href="socialMedia.url">
+                    {{socialMedia.label}}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer>Réalisé par Ibrahim Madi ©</footer>
+  </div>
+  <script src="vueApp.js"></script>
+  </body>
+  
 </html>
+

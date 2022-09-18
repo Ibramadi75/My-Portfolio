@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;700;900&display=swap");
+
+#main{
+    margin: auto;
+    text-align: center;
+    width: 60%;
+}
+*{
+    font-family: "Figtree", sans-serif;
+}

@@ -2,10 +2,53 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;700;900&display=swap");
 
 #main{
+    width: 80%;
     margin: auto;
     text-align: center;
-    width: 60%;
 }
 *{
     font-family: "Figtree", sans-serif;
+}
+h1{
+    
+}
+.img-responsive{
+    max-width: 500px;
+    min-width: 500px;
+    width: 30%;
+    margin: 50px;
+}
+.citation{
+    position: relative;
+    list-style: none;
+    color: rgb(122, 122, 122);
+    background:rgba(244, 244, 244, 0.666);
+    padding-left: 20px;
+}
+.img-links{
+    display: flex;
+    justify-content:center;
+}
+
+.citation:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -10px;
+    border-left: 10px solid rgb(149, 210, 197);
+    padding-left: 20px;
+}
+
+ul{
+    list-style: none;
+}
+li{
+    margin-top: 10px;
+}
+@media (min-width:700px) {
+    #main{
+        width: 60%;
+    }
 }

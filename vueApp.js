@@ -41,7 +41,7 @@ const vm = Vue.createApp({
                 },
                 {
                   id: 1,
-                  title: "Une liste de mes CheatSheets perso, maintenues et mises à jours régulièrement par mes soins",
+                  title: "Mon stage chez All My Com",
                   urlTravaux: "trv02.html",
                 },
                 {

@@ -86,7 +86,7 @@
           <h1>Mes différents travaux</h1>
           <ul>
             <li v-for="item of this.mesTravaux" class="travaux" v-bind:id="'travaux' + item.id">
-              <a v-bind:href="'./mesTravaux/' + item.urlTravaux">
+              <a v-bind:href="item.urlTravaux">
                 {{item.title}}
                 <img
                   src="images/next.png"
@@ -160,7 +160,7 @@
                 </ul>
             </div>
             <div class="list-competences-container">
-                <h3 class="list-heading">Les frameworks</h3>
+                <h3 class="list-heading">Les frameworks et librairies</h3>
                 <ul class="compUl">
                     <li>
                     VueJs
@@ -207,11 +207,10 @@
           class="lside"
           v-if="this.headerItems[3].isSelected || this.screenWidth < breakPoint1"
         >
-          <h1>Mes veilles technologiques</h1>
+          <h1>Ma veille technologique</h1>
           <ul>
-            <li v-for="veille in this.veilles" class="travaux" v-bind:id="'veille' + veille.id"><a v-bind:href="'subPages.php?fileToRead=' + veille.name">{{veille.name.replaceAll('.md', '')}}<span style="font-size:.5em;">{{veille.lastModif}}</span></a></li>
-            <li class="travaux" v-bind:id="'veille' + veilles.length">
-              <a href="./subPages.php">Voir tout..</a>
+            <li class="travaux" >
+              
             </li>
           </ul>
           <img

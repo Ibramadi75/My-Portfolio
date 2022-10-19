@@ -305,9 +305,9 @@ a:hover::before {
   animation: bar-remplir84 1s linear forwards;
 }
 #javascript-barlevel::before {
-  background-color: #c0e880;
-  width: 74px;
-  animation: bar-remplir74 1s forwards;
+  background-color: #dfe880;
+  width: 60px;
+  animation: bar-remplir60 1s forwards;
 }
 #jQuery-barlevel::before {
   background-color: #dfe880;
@@ -316,13 +316,13 @@ a:hover::before {
 }
 #vueJs-barlevel::before {
   background-color: #dfe880;
-  width: 60px;
-  animation: bar-remplir60 1s forwards;
-}
-#php-barlevel::before {
-  background-color: #dfe880;
   width: 53px;
   animation: bar-remplir53 1s forwards;
+}
+#php-barlevel::before {
+  background-color: #c0e880;
+  width: 74px;
+  animation: bar-remplir74 1s forwards;
 }
 @keyframes bar-remplir84 {
   0% {

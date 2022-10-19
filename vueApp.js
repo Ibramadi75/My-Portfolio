@@ -37,17 +37,17 @@ const vm = Vue.createApp({
                 {
                   id: 0,
                   title: "J'ai réalisé un site pour restaurant adaptatif clefs en main",
-                  urlTravaux: "trv01.html",
+                  urlTravaux: "./mesTravaux/trv01.html",
                 },
                 {
                   id: 1,
                   title: "Mon stage chez All My Com",
-                  urlTravaux: "trv02.html",
+                  urlTravaux: "./mesTravaux/trv02.html",
                 },
                 {
                   id: 2,
                   title: "J'ai réalisé un site qui permet de consulter le cours des différentes cryptomonnaies en direct",
-                  urlTravaux: "trv01.html",
+                  urlTravaux: "https://github.com/Ibramadi75/crypto-labs",
                 }
             ],
             socialMedias: [
@@ -60,7 +60,7 @@ const vm = Vue.createApp({
                 {
                     id: 1,
                     label: 'linkedin',
-                    url: 'https://www.linkedin.com/in/ibrahim-madi-374ab3227/',
+                    url: 'https://github.com/Ibramadi75',
                     iconUrl: 'linkedin.png'
                 },
                 {
@@ -122,25 +122,6 @@ const vm = Vue.createApp({
                 }
               }, "10")
         },
-        // getting data from the api
-        getApi(){
-            axios
-            .get("monJson.json")
-            .then(
-                (reponse) => {(this.veilles = reponse.data  )}
-            )
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-            .then(function () {
-                // always executed
-            });
-        }
-    },
-    beforeMount(){
-        this.getApi(),
-        console.log('this.screenHeight : ' + this.screenHeight),
-        console.log('this.screenWidth : ' + this.screenWidth)
+    
     }
 }).mount('#app')

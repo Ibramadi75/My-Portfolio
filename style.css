@@ -538,7 +538,6 @@ footer {
   }
   .lside{
     width:100%;
-    padding:0px;
   }
   #frise{
     width:90%;
@@ -575,7 +574,6 @@ footer {
   }
   #navItemsContainer{
     margin: 0;
-    padding:0;
     justify-content: center;
   }
   #menuButton {
@@ -596,46 +594,18 @@ footer {
     font-size: .8em;
   }
 }
-/* }
 @media (max-width:400px){
-  body{
-    padding-top: 0;
-  }
-  .headerItems{
-    font-size: 20px;
-  }
-  #main{
-    margin-top:0vh;
-    width:100%;
-  }
   .lside{
-    padding: 10px;
-    margin-bottom: 30px;
-  }
-  .socialMediaIcon{
-    width:50px;
-  }
-  #socialMedia_list{
-    height:auto;
-  }
-  #competences-container{
-    padding:20px;
-    background:none;
+    padding: 0;
   }
   .list-competences-container{
-    width:100%;
-    background: rgba(255, 246, 240, 0.826);
-    padding:20px;
-    border-radius: 10px;
+    width: 70%;
   }
-  .travaux{
-    margin-left:auto;
-    margin-right:auto;
+  #competences-container{
+    width: 80%;
   }
-  .bar{
-    height:220px;
+  #main{
+    width: unset;
+    min-width: 70%;
   }
-  h1{
-    font-size: 18px;
-  } */
 }

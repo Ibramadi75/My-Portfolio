@@ -2,7 +2,7 @@ const vm = Vue.createApp({
     data() {
         return {
             i: 0,
-            breakPoint1:400,
+            breakPoint1:0,
             headerItems: [
                 {
                     label : "Accueil",

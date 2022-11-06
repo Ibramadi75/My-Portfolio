@@ -2,7 +2,7 @@ const vm = Vue.createApp({
     data() {
         return {
             i: 0,
-            breakPoint1:0,
+            breakPoint1:400,
             headerItems: [
                 {
                     label : "Accueil",
@@ -60,7 +60,7 @@ const vm = Vue.createApp({
                 {
                     id: 1,
                     label: 'linkedin',
-                    url: 'https://github.com/Ibramadi75',
+                    url: 'https://www.linkedin.com/in/ibrahim-madi-374ab3227/',
                     iconUrl: 'linkedin.png'
                 },
                 {
@@ -122,6 +122,25 @@ const vm = Vue.createApp({
                 }
               }, "10")
         },
-    
+        // getting data from the api
+        getApi(){
+            axios
+            .get("monJson.json")
+            .then(
+                (reponse) => {(this.veilles = reponse.data  )}
+            )
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .then(function () {
+                // always executed
+            });
+        }
+    },
+    beforeMount(){
+        this.getApi()
+        // console.log('this.screenHeight : ' + this.screenHeight),
+        // console.log('this.screenWidth : ' + this.screenWidth)
     }
 }).mount('#app')

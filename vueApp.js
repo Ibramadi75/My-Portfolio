@@ -48,6 +48,10 @@ const vm = Vue.createApp({
                   id: 2,
                   title: "J'ai réalisé un site qui permet de consulter le cours des différentes cryptomonnaies en direct",
                   urlTravaux: "https://github.com/Ibramadi75/crypto-labs",
+                },
+                {
+                    id: 3, 
+                    title : "J'ai participé à la réalisation de site sous Wordpress et Divi"
                 }
             ],
             socialMedias: [

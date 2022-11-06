@@ -6,6 +6,7 @@ body {
   padding-top: 15vh;
   transition-duration: 1s;
   overflow: hidden;
+  margin:0;
 }
 #app {
   margin: 0;
@@ -13,6 +14,7 @@ body {
   /* height: 100vh; */
   display: flex;
   flex-wrap: wrap;
+  
 }
 a {
   color: black;
@@ -111,9 +113,6 @@ a:hover::before {
 .fromLeft {
   animation: fromLeft 1s forwards, appear 2s forwards;
 }
-.fromTop{
-    animation: fromBottom 1s forwards, appear 2s forwards;
-}
 
 @keyframes appear {
   0% {
@@ -164,7 +163,7 @@ a:hover::before {
 
   transition-duration: 0.4s;
 
-  margin-bottom: 100px;
+  margin-bottom: 150px;
   justify-self: left;
 }
 
@@ -461,7 +460,7 @@ footer {
   width:80%;
   margin: auto;
   display: flex;
-  margin-top: 5vh;
+  margin-top: 0;
 }
 @keyframes fromBottom {
     100%{
@@ -596,8 +595,14 @@ footer {
     font-size: .8em;
   }
 }
-/* }
+
 @media (max-width:400px){
+  #Accueil{
+    padding: 0;
+  }
+  header{
+    display: none;
+  }
   body{
     padding-top: 0;
   }
@@ -605,7 +610,7 @@ footer {
     font-size: 20px;
   }
   #main{
-    margin-top:0vh;
+    margin-top:10vh;
     width:100%;
   }
   .lside{
@@ -619,8 +624,11 @@ footer {
     height:auto;
   }
   #competences-container{
-    padding:20px;
+    padding:0;
     background:none;
+  }
+  #Compétences{
+    margin:0px;
   }
   .list-competences-container{
     width:100%;
@@ -637,5 +645,8 @@ footer {
   }
   h1{
     font-size: 18px;
-  } */
+  }
+  #main{
+    margin-top: 0;
+  }
 }

@@ -39,7 +39,7 @@
 }
 
 ul{
-    list-style: none;
+    text-align: left;
 }
 li{
     margin-top: 10px;
